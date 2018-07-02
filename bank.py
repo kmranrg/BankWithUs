@@ -24,7 +24,37 @@ while True:
         user_data["amount"] = amt
         bank_data[acc_no] = user_data
 
-        print("\nACCOUNT CREATED")
-        print(bank_data)
-        
-        
+        print("\nACCOUNT CREATED\n")
+
+    elif ch == 2:
+        acc_no = int(input("Enter account no:"))
+        if acc_no in bank_data:
+            print("\nACCOUNT EXISTS\n")
+            choice = int(input("\n1.Check Balance\n2.Withdraw\n3.Deposit\n\nEnter choice:"))
+
+            if choice == 1:
+                print("\nYour available balance:",bank_data[acc_no]["amount"])
+                
+            elif choice == 2:
+                withd = int(input("\nEnter withdraw amount:"))
+                bank_data[acc_no]["amount"] = bank_data[acc_no]["amount"] - withd
+                print("\nAmount withdrawn, now your available balance is %i"%bank_data[acc_no]["amount"])
+                
+            elif choice == 3:
+                dep = int(input("\nEnter deposit amount:"))
+                bank_data[acc_no]["amount"] = bank_data[acc_no]["amount"] + dep
+                print("\nAmount deposited, now your available balance is %i"%bank_data[acc_no]["amount"])
+                
+            else:
+                print("\n\nINVALID CHOICE!")
+                
+        else:
+            print("\nACCOUNT NOT FOUND\n")
+            
+    elif ch == 3:
+        break
+    else:
+        print("\n\nINVALID CHOICE!")
+        break
+
+print("\n\n***** Thank you for banking with us *****")
