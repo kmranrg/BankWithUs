@@ -3,7 +3,6 @@
 print("\t\t\t***** BankWithUs *****")
 
 bank_data = {}
-user_data = {}
 
 while True:
     print("\n\n\t\t\t----- Main Menu -----")
@@ -16,7 +15,8 @@ while True:
         acc = input("Enter account type:")
         amt = int(input("Enter amount:"))
         acc_no = int(input("Enter account no:"))
-
+        
+        user_data = {}
         user_data["name"] = name
         user_data["city"] = city
         user_data["age"] = age
